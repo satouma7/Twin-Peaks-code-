@@ -1,5 +1,5 @@
-%Quantification of Bsh/Run-overlap (Fig.7g-i)
-clear;filename='vps3_';
+%Quantification of Bsh/Run-overlap (Fig7g-i)
+clear;filename='Dl0_';%Head part of the file name
 
 %Loading Bsh_control (X1,Y1)
 Bsh1=readmatrix(strcat(filename,'Bsh_ctrl.csv'));
@@ -39,6 +39,7 @@ V2=Run2(:,1);W2=Run2(:,2);M2=size(V2,1);
 W2=Height-W2;
 S2=zeros(M2,1);
 
+%Plot mutant cells
 figure('Position',[1500 500 1000 1000]);
 subplot(2,2,3);plot(X2,Y2,'r*',V2,W2,'b+',X0,Y0,'ko');xlim([0 Width]);ylim([0 Height]);
 title(strcat(filename,' BshRun-mutant'));
@@ -80,6 +81,7 @@ for I=1:M3
     S3(I)=sqrt((V3(I)-X0)^2+(W3(I)-Y0)^2);  
 end
 
+%Plot control cells
 subplot(2,2,1);plot(X1,Y1,'y*',V1,W1,'c+',X0,Y0,'ko',X3,Y3,'r*',V3,W3,'b+');xlim([0 Width]);ylim([0 Height]);
 title(strcat(filename,' BshRun-ctrl'));
 
@@ -90,8 +92,8 @@ ctrlBshPoly=polyshape(X3(ctrlBsh),Y3(ctrlBsh));
 ctrlRunPoly=polyshape(V3(ctrlRun),W3(ctrlRun));
 mutBshPoly=polyshape(X2(mutBsh),Y2(mutBsh));
 mutRunPoly=polyshape(V2(mutRun),W2(mutRun));
-ctrlInter=intersect(ctrlBshPoly,ctrlRunPoly);
-mutInter=intersect(mutBshPoly,mutRunPoly);
+ctrlInter=intersect(ctrlBshPoly,ctrlRunPoly);%Size of Bsh/Run-intersection in control area
+mutInter=intersect(mutBshPoly,mutRunPoly);%Size of Bsh/Run-intersection in mutant area
 
 subplot(2,2,2);plot(ctrlInter,'FaceColor','m');title(['intersection:',num2str(area(ctrlInter)),' Bsh:',num2str(N2),' Run:',num2str(M2)]);hold on;
 plot(X3(ctrlBsh),Y3(ctrlBsh),'r',X3,Y3,'r*',V3(ctrlRun),W3(ctrlRun),'b',V3,W3,'b+');hold off;
