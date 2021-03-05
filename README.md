@@ -1,6 +1,6 @@
 # TwinPeaksCode
 1. proneural wave folder
-2. 
+ 
 The folder contains the following MATLAB scripts for the numerical simulations of the proneural wave. 
 
 proneuralwave4original.m: original four variable model (Fig.1e)
@@ -18,7 +18,7 @@ proneuralwave5hill.m: five variable model with Hill function (related to Supplem
 proneuralwave5hillPhase.m: Phase diagram of five variable model with Hill function (Supplementary Fig.12)
 
 2. BshRun_quantification folder
-3. 
+
 The folder contains the MATLAB script and csv data files to quantify the overlap between Bsh- and Run-domains
 
 BshRun_overlap.m: quantify the overlap between Bsh- and Run-domains (Fig. 7g-i)
