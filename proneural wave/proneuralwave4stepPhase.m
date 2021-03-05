@@ -1,7 +1,7 @@
 %2 dimension 4 variables Phase Diagram (Supplementary Fig1)
 %EGF (E), Notch signal (N), Delta (D), AS-C (A)
 %Step function
-dn=0.25;dc=0.1;ec=0.07;
+dn=0.25;dc=0.1;ec=0.07;%dn: d_t, dc: d_c, ec: e_c in the manuscript
 kd=1;ae=1;ad=1;
 ea=100;de=1;ke=1;kn=1;Sigma=0;
 

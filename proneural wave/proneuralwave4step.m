@@ -1,8 +1,8 @@
 %2 dimension 4 variables (Fig1f)
 %EGF (E), Notch signal (N), Delta (D), AS-C (A)
 %Step function
-dn=0.25;dc=0.1;ec=0.07;
-kd=1;ae=1;ad=1;
+dn=0.25;dc=0.1;ec=0.07;%dn: d_t, dc: d_c, ec: e_c in the manuscript
+kd=1;ae=1;ad=1;%ad=0.5 in Fig2b
 ea=100;de=1;ke=1;kn=1;Sigma=0;
 dx = 2;dx2=dx * dx;dt=0.01;Tmax = 2000;
 Xmax=25;Xsteps=1:Xmax;

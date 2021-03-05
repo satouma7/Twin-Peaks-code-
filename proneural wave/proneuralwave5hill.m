@@ -1,4 +1,4 @@
-%2 dimension 5 variables (Supplementary Fig12)
+%2 dimension 5 variables 2D plot (related to Supplementary Fig12)
 %EGF (E), full length Notch (F), Notch signal (S), Delta (D), AS-C (A)
 %Hill function
 %full length Notch degrades by cis-inhibition and trans-activation

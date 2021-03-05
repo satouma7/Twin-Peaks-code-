@@ -1,7 +1,7 @@
 %2 dimension 4 variables (Fig1e)
 %EGF (E), Notch signal (N), Delta (D), AS-C (A)
 %Liniar cis-inhibition (original)
-dn=0.25;dc=0.25;ec=0.07;
+dn=0.25;dc=0.25;%dn: d_t, dc: d_c in the manuscript
 kd=1;ae=1;ad=1;
 ea=100;de=1;ke=1;kn=1;Sigma=0;
 dx = 2;dx2=dx * dx;dt=0.01;Tmax = 2000;
@@ -46,11 +46,11 @@ for T=1: Tmax-1
         end
     end
     for X=2: Xmax-1        
-        N(1,X,T+1)= N(1,X,T) + dt*( dn*( D(1,X+1,T)+D(1,X-1,T)+D(2,X,T)) -dc*(D(1,X,T)>=ec) -kn*N(1,X,T) );  
+        N(1,X,T+1)= N(1,X,T) + dt*( dn*( D(1,X+1,T)+D(1,X-1,T)+D(2,X,T)) -dc*D(1,X,T) -kn*N(1,X,T) );  
         N(Xmax,X,T+1)= N(Xmax,X,T) + dt*( dn*( D(Xmax,X+1,T)+D(Xmax,X-1,T)+D(Xmax-1,X,T)) -dc*D(Xmax,X,T) -kn*N(Xmax,X,T)  );         
     end
     for Y=2: Xmax-1        
-        N(Y,1,T+1)= N(Y,1,T) + dt*( dn*( D(Y+1,1,T)+D(Y-1,1,T)+D(Y,2,T)) -dc*(D(Y,1,T)>=ec) -kn*N(Y,1,T));  
+        N(Y,1,T+1)= N(Y,1,T) + dt*( dn*( D(Y+1,1,T)+D(Y-1,1,T)+D(Y,2,T)) -dc*D(Y,1,T) -kn*N(Y,1,T));  
         N(Y,Xmax,T+1)= N(Y,Xmax,T) + dt*( dn*( D(Y+1,Xmax,T)+D(Y-1,Xmax,T)+D(Y,Xmax-1,T)) -dc*D(Y,Xmax,T) -kn*N(Y,Xmax,T) );         
     end       
     N(1,1,T+1)= N(1,1,T) + dt*( dn*( D(1,2,T)+D(1,1,T)) -dc*D(1,1,T) -kn*N(1,1,T));  

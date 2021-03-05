@@ -1,7 +1,7 @@
 %2 dimension 4 variables Phase Diagram (Supplementary Fig2)
 %EGF (E), Notch signal (N), Delta (D), AS-C (A)
 %Hill function
-dn=0.25;dc=0.25;
+dn=0.25;dc=0.25;%dn: d_t, dc: d_c in the manuscript
 nt=1;kt=1;ktnt=kt^nt;%nt: Hill's co-efficientÅ@kt:activation co-efficient  for trans-activation
 nc=5;kc=0.1;kcnc=kc^nc;%nc: Hill's co-efficientÅ@kc:activation co-efficient for cis-inhibition
 
