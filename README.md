@@ -1,5 +1,6 @@
 # TwinPeaksCode
 1. proneural wave folder
+
 The folder contains the following MATLAB scripts for the numerical simulations of the proneural wave. 
 
 proneuralwave4original.m: original four variable model (Fig.1e)
